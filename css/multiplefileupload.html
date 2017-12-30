@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="stylesheet" type="text/css" href="css/upload_css.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.uploadfile.min.js"></script>
+</head>
+<body>
+
+<!--upload-->
+<table style="text-align:center;margin: 0 auto">
+<tr><td><div id="mulitplefileuploader">Upload</div></td></tr>
+<tr><td><div id="status"></div></td></tr>
+</table>
+<!--end upload-->
+
+
+
+<script>
+
+$(document).ready(function()
+{
+
+var settings = {
+	//url: "upload.php",
+	url: "upload.php",
+	method: "POST",
+	allowedTypes:"mp3",
+	fileName: "myfile",
+	multiple: true,
+	onSuccess:function(files,data,xhr)
+	{
+		$("#status").html("<font color='green'>Upload is success </font>");
+		
+	},
+	onError: function(files,status,errMsg)
+	{		
+		$("#status").html("<font color='red'>Upload is Failed</font>");
+		
+	}
+}
+$("#mulitplefileuploader").uploadFile(settings);
+
+});
+</script>
+
+
+</body>
+</html>

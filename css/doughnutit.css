@@ -1,0 +1,11 @@
+.canvas-wrapper{
+	background-color: #eee;
+}
+
+.rightCanvas{
+	float: right;
+}
+
+.leftCanvas{
+	float: left;
+}
